@@ -1,26 +1,42 @@
 package edu.pe.CNavarro.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "profesor")
-@PrimaryKeyJoinColumn(referencedColumnName="idpersona")
-public class Direccion extends Persona{
+@Table(name = "dirrecion")
+public class Direccion {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long iddireccion;
 
-    @Column(name = "cod_direccion", length = 23)
-    private String codDirec;
+    private String codigo;
+
+
 
     public Direccion() {
     }
 
-    public String getCodDirec() {
-        return codDirec;
+    public Direccion(Long iddireccion) {
+        this.iddireccion = iddireccion;
     }
 
-    public void setCodDirec(String codAdmin) {
-        this.codDirec = codAdmin;
+    public Direccion(String codigo) {
+        this.codigo = codigo;
     }
-}
+
+    public Long getIdescuela() {
+        return iddireccion;
+    }
+
+    public void setIdescuela(Long iddireccion) {
+        this.iddireccion = iddireccion;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }}
